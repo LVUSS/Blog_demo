@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  profiles:
+    active: dev
+
+mybatis:
+  type-aliases-package: com.dcy.po
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+message.avatar: /images/dcy.jpg

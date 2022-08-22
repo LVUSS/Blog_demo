@@ -1,0 +1,141 @@
+2022-08-22 17:39:09.600  INFO 12672 --- [restartedMain] com.dcy.BlogApplication                  : Starting BlogApplication using Java 1.8.0 on Yu with PID 12672 (E:\springboot-study\blog\target\classes started by Administrator in E:\springboot-study\blog)
+2022-08-22 17:39:09.615 DEBUG 12672 --- [restartedMain] com.dcy.BlogApplication                  : Running with Spring Boot v2.6.4, Spring v5.3.16
+2022-08-22 17:39:09.615  INFO 12672 --- [restartedMain] com.dcy.BlogApplication                  : The following 1 profile is active: "dev"
+2022-08-22 17:39:09.693  INFO 12672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-22 17:39:09.693  INFO 12672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-22 17:39:13.881  INFO 12672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-22 17:39:13.881  INFO 12672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.26] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-08-22 17:39:13.881  INFO 12672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.26] using APR version [1.7.0].
+2022-08-22 17:39:13.881  INFO 12672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2022-08-22 17:39:13.881  INFO 12672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-08-22 17:39:13.897  INFO 12672 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1i  8 Dec 2020]
+2022-08-22 17:39:13.913  INFO 12672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-22 17:39:13.913  INFO 12672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-08-22 17:39:14.131  INFO 12672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-22 17:39:14.131  INFO 12672 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4438 ms
+2022-08-22 17:39:16.271  INFO 12672 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-08-22 17:39:17.725  INFO 12672 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-22 17:39:17.788  INFO 12672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-08-22 17:39:17.804  INFO 12672 --- [restartedMain] com.dcy.BlogApplication                  : Started BlogApplication in 9.33 seconds (JVM running for 11.855)
+2022-08-22 17:41:18.181  INFO 12672 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-22 17:41:18.181  INFO 12672 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-22 17:41:18.183  INFO 12672 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-22 17:41:18.286  INFO 12672 --- [http-nio-8081-exec-2] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.index', args=[{}, 1, {}]}
+2022-08-22 17:41:18.423  INFO 12672 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-22 17:41:19.381  INFO 12672 --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-22 17:41:19.397 DEBUG 12672 --- [http-nio-8081-exec-2] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b, myblog.t_type t, myblog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2022-08-22 17:41:19.440 DEBUG 12672 --- [http-nio-8081-exec-2] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
+2022-08-22 17:41:19.602 DEBUG 12672 --- [http-nio-8081-exec-2] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
+2022-08-22 17:41:19.861 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getFirstPageBlog     : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from myblog.t_blog b, myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2022-08-22 17:41:19.862 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getFirstPageBlog     : ==> Parameters: 10(Integer)
+2022-08-22 17:41:19.871 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getFirstPageBlog     : <==      Total: 2
+2022-08-22 17:41:19.875 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getAllRecommendBlog  : ==>  Preparing: select * from myblog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2022-08-22 17:41:19.876 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getAllRecommendBlog  : ==> Parameters: 
+2022-08-22 17:41:19.937 DEBUG 12672 --- [http-nio-8081-exec-2] com.dcy.dao.BlogDao.getAllRecommendBlog  : <==      Total: 0
+2022-08-22 17:41:19.940  INFO 12672 --- [http-nio-8081-exec-2] com.dcy.aspect.LogAspect                 : Result :{}index
+2022-08-22 17:41:19.940  INFO 12672 --- [http-nio-8081-exec-2] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:21.362  INFO 12672 --- [http-nio-8081-exec-8] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.blogMessage', args=[{}]}
+2022-08-22 17:41:21.365 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogTotal         : ==>  Preparing: select count(*) from myblog.t_blog 
+2022-08-22 17:41:21.365 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogTotal         : ==> Parameters: 
+2022-08-22 17:41:21.367 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogTotal         : <==      Total: 1
+2022-08-22 17:41:21.369 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogViewTotal     : ==>  Preparing: select sum(views) from myblog.t_blog 
+2022-08-22 17:41:21.369 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogViewTotal     : ==> Parameters: 
+2022-08-22 17:41:21.400 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogViewTotal     : <==      Total: 1
+2022-08-22 17:41:21.401 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==>  Preparing: select count(*) from myblog.t_comment 
+2022-08-22 17:41:21.402 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==> Parameters: 
+2022-08-22 17:41:21.407 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogCommentTotal  : <==      Total: 1
+2022-08-22 17:41:21.409 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==>  Preparing: select count(*) from myblog.t_message 
+2022-08-22 17:41:21.410 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==> Parameters: 
+2022-08-22 17:41:21.415 DEBUG 12672 --- [http-nio-8081-exec-8] com.dcy.dao.BlogDao.getBlogMessageTotal  : <==      Total: 1
+2022-08-22 17:41:21.416  INFO 12672 --- [http-nio-8081-exec-8] com.dcy.aspect.LogAspect                 : Result :{}index :: blogMessage
+2022-08-22 17:41:21.416  INFO 12672 --- [http-nio-8081-exec-8] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:49.077  INFO 12672 --- [http-nio-8081-exec-3] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.TypeShowController.types', args=[-1, {}, 1]}
+2022-08-22 17:41:49.093 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.TypeDao.getAllTypeAndBlog    : ==>  Preparing: select t.id tid, t.name, b.id bid, b.title,b.type_id from myblog.t_type t,myblog.t_blog b where t.id = b.type_id 
+2022-08-22 17:41:49.094 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.TypeDao.getAllTypeAndBlog    : ==> Parameters: 
+2022-08-22 17:41:49.098 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.TypeDao.getAllTypeAndBlog    : <==      Total: 2
+2022-08-22 17:41:49.104 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.BlogDao.getByTypeId          : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count, b.update_time, b.description, t.name , u.nickname, u.avatar from myblog.t_blog b, myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id and b.type_id = ? order by b.update_time desc 
+2022-08-22 17:41:49.104 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.BlogDao.getByTypeId          : ==> Parameters: 22(Long)
+2022-08-22 17:41:49.144 DEBUG 12672 --- [http-nio-8081-exec-3] com.dcy.dao.BlogDao.getByTypeId          : <==      Total: 1
+2022-08-22 17:41:49.144  INFO 12672 --- [http-nio-8081-exec-3] com.dcy.aspect.LogAspect                 : Result :{}types
+2022-08-22 17:41:49.144  INFO 12672 --- [http-nio-8081-exec-3] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:49.309  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.blogMessage', args=[{}]}
+2022-08-22 17:41:49.310 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==>  Preparing: select count(*) from myblog.t_blog 
+2022-08-22 17:41:49.310 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==> Parameters: 
+2022-08-22 17:41:49.311 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : <==      Total: 1
+2022-08-22 17:41:49.312 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==>  Preparing: select sum(views) from myblog.t_blog 
+2022-08-22 17:41:49.312 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==> Parameters: 
+2022-08-22 17:41:49.313 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : <==      Total: 1
+2022-08-22 17:41:49.314 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==>  Preparing: select count(*) from myblog.t_comment 
+2022-08-22 17:41:49.314 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==> Parameters: 
+2022-08-22 17:41:49.315 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : <==      Total: 1
+2022-08-22 17:41:49.316 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==>  Preparing: select count(*) from myblog.t_message 
+2022-08-22 17:41:49.317 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==> Parameters: 
+2022-08-22 17:41:49.318 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : <==      Total: 1
+2022-08-22 17:41:49.319  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Result :{}index :: blogMessage
+2022-08-22 17:41:49.319  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:51.161  INFO 12672 --- [http-nio-8081-exec-4] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.ArchiveShowController.archive', args=[{}]}
+2022-08-22 17:41:51.169 DEBUG 12672 --- [http-nio-8081-exec-4] com.dcy.dao.BlogDao.getAllBlogQuery      : ==>  Preparing: select b.id,b.title,b.update_time,b.recommend,b.published,b.type_id,t.id,t.name from myblog.t_blog b left outer join myblog.t_type t on b.type_id = t.id order by b.update_time desc 
+2022-08-22 17:41:51.171 DEBUG 12672 --- [http-nio-8081-exec-4] com.dcy.dao.BlogDao.getAllBlogQuery      : ==> Parameters: 
+2022-08-22 17:41:51.174 DEBUG 12672 --- [http-nio-8081-exec-4] com.dcy.dao.BlogDao.getAllBlogQuery      : <==      Total: 2
+2022-08-22 17:41:51.176  INFO 12672 --- [http-nio-8081-exec-4] com.dcy.aspect.LogAspect                 : Result :{}archives
+2022-08-22 17:41:51.176  INFO 12672 --- [http-nio-8081-exec-4] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:51.418  INFO 12672 --- [http-nio-8081-exec-10] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.blogMessage', args=[{}]}
+2022-08-22 17:41:51.419 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogTotal         : ==>  Preparing: select count(*) from myblog.t_blog 
+2022-08-22 17:41:51.420 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogTotal         : ==> Parameters: 
+2022-08-22 17:41:51.423 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogTotal         : <==      Total: 1
+2022-08-22 17:41:51.424 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogViewTotal     : ==>  Preparing: select sum(views) from myblog.t_blog 
+2022-08-22 17:41:51.425 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogViewTotal     : ==> Parameters: 
+2022-08-22 17:41:51.429 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogViewTotal     : <==      Total: 1
+2022-08-22 17:41:51.432 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==>  Preparing: select count(*) from myblog.t_comment 
+2022-08-22 17:41:51.432 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==> Parameters: 
+2022-08-22 17:41:51.433 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogCommentTotal  : <==      Total: 1
+2022-08-22 17:41:51.437 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==>  Preparing: select count(*) from myblog.t_message 
+2022-08-22 17:41:51.437 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==> Parameters: 
+2022-08-22 17:41:51.438 DEBUG 12672 --- [http-nio-8081-exec-10] com.dcy.dao.BlogDao.getBlogMessageTotal  : <==      Total: 1
+2022-08-22 17:41:51.439  INFO 12672 --- [http-nio-8081-exec-10] com.dcy.aspect.LogAspect                 : Result :{}index :: blogMessage
+2022-08-22 17:41:51.439  INFO 12672 --- [http-nio-8081-exec-10] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:53.002 DEBUG 12672 --- [http-nio-8081-exec-2] c.dcy.dao.FriendLinkDao.listFriendLink   : ==>  Preparing: select * from myblog.t_friend order by t_friend.create_time desc 
+2022-08-22 17:41:53.003 DEBUG 12672 --- [http-nio-8081-exec-2] c.dcy.dao.FriendLinkDao.listFriendLink   : ==> Parameters: 
+2022-08-22 17:41:53.010 DEBUG 12672 --- [http-nio-8081-exec-2] c.dcy.dao.FriendLinkDao.listFriendLink   : <==      Total: 4
+2022-08-22 17:41:53.189  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.blogMessage', args=[{}]}
+2022-08-22 17:41:53.190 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==>  Preparing: select count(*) from myblog.t_blog 
+2022-08-22 17:41:53.190 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==> Parameters: 
+2022-08-22 17:41:53.191 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : <==      Total: 1
+2022-08-22 17:41:53.192 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==>  Preparing: select sum(views) from myblog.t_blog 
+2022-08-22 17:41:53.193 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==> Parameters: 
+2022-08-22 17:41:53.194 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : <==      Total: 1
+2022-08-22 17:41:53.195 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==>  Preparing: select count(*) from myblog.t_comment 
+2022-08-22 17:41:53.195 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==> Parameters: 
+2022-08-22 17:41:53.196 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : <==      Total: 1
+2022-08-22 17:41:53.197 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==>  Preparing: select count(*) from myblog.t_message 
+2022-08-22 17:41:53.197 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==> Parameters: 
+2022-08-22 17:41:53.198 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : <==      Total: 1
+2022-08-22 17:41:53.199  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Result :{}index :: blogMessage
+2022-08-22 17:41:53.199  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:54.385  INFO 12672 --- [http-nio-8081-exec-5] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.index', args=[{}, 1, {}]}
+2022-08-22 17:41:54.391 DEBUG 12672 --- [http-nio-8081-exec-5] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : ==>  Preparing: SELECT count(0) FROM myblog.t_blog b, myblog.t_type t, myblog.t_user u WHERE b.type_id = t.id AND u.id = b.user_id 
+2022-08-22 17:41:54.391 DEBUG 12672 --- [http-nio-8081-exec-5] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : ==> Parameters: 
+2022-08-22 17:41:54.392 DEBUG 12672 --- [http-nio-8081-exec-5] c.d.dao.BlogDao.getFirstPageBlog_COUNT   : <==      Total: 1
+2022-08-22 17:41:54.393 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getFirstPageBlog     : ==>  Preparing: select b.id,b.title,b.first_picture, b.views, b.comment_count,b.update_time,b.description, t.name , u.nickname, u.avatar from myblog.t_blog b, myblog.t_type t,myblog.t_user u where b.type_id = t.id and u.id = b.user_id order by b.update_time desc LIMIT ? 
+2022-08-22 17:41:54.393 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getFirstPageBlog     : ==> Parameters: 10(Integer)
+2022-08-22 17:41:54.396 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getFirstPageBlog     : <==      Total: 2
+2022-08-22 17:41:54.397 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getAllRecommendBlog  : ==>  Preparing: select * from myblog.t_blog where t_blog.recommend = true order by t_blog.update_time desc limit 4; 
+2022-08-22 17:41:54.397 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getAllRecommendBlog  : ==> Parameters: 
+2022-08-22 17:41:54.399 DEBUG 12672 --- [http-nio-8081-exec-5] com.dcy.dao.BlogDao.getAllRecommendBlog  : <==      Total: 0
+2022-08-22 17:41:54.399  INFO 12672 --- [http-nio-8081-exec-5] com.dcy.aspect.LogAspect                 : Result :{}index
+2022-08-22 17:41:54.400  INFO 12672 --- [http-nio-8081-exec-5] com.dcy.aspect.LogAspect                 : --------doAfter--------
+2022-08-22 17:41:54.520  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Request : {url='http://localhost:8081/footer/blogmessage', ip='0:0:0:0:0:0:0:1', classMethod='com.dcy.web.IndexController.blogMessage', args=[{}]}
+2022-08-22 17:41:54.521 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==>  Preparing: select count(*) from myblog.t_blog 
+2022-08-22 17:41:54.522 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : ==> Parameters: 
+2022-08-22 17:41:54.524 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogTotal         : <==      Total: 1
+2022-08-22 17:41:54.525 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==>  Preparing: select sum(views) from myblog.t_blog 
+2022-08-22 17:41:54.526 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : ==> Parameters: 
+2022-08-22 17:41:54.527 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogViewTotal     : <==      Total: 1
+2022-08-22 17:41:54.528 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==>  Preparing: select count(*) from myblog.t_comment 
+2022-08-22 17:41:54.528 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : ==> Parameters: 
+2022-08-22 17:41:54.529 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogCommentTotal  : <==      Total: 1
+2022-08-22 17:41:54.530 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==>  Preparing: select count(*) from myblog.t_message 
+2022-08-22 17:41:54.530 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : ==> Parameters: 
+2022-08-22 17:41:54.531 DEBUG 12672 --- [http-nio-8081-exec-9] com.dcy.dao.BlogDao.getBlogMessageTotal  : <==      Total: 1
+2022-08-22 17:41:54.532  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : Result :{}index :: blogMessage
+2022-08-22 17:41:54.532  INFO 12672 --- [http-nio-8081-exec-9] com.dcy.aspect.LogAspect                 : --------doAfter--------

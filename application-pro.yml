@@ -1,0 +1,5 @@
+2022-03-16 17:06:39.634  INFO 17452 --- [restartedMain] com.dcy.BlogApplication                  : Starting BlogApplication using Java 1.8.0 on Dcy with PID 17452 (E:\springboot-study\blog\target\classes started by Administrator in E:\springboot-study\blog)
+2022-03-16 17:06:39.636  INFO 17452 --- [restartedMain] com.dcy.BlogApplication                  : The following 1 profile is active: "pro"
+2022-03-16 17:06:40.391  WARN 17452 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.dcy]' package. Please check your configuration.
+2022-03-16 17:06:41.175  WARN 17452 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2022-03-16 17:06:41.426  INFO 17452 --- [restartedMain] com.dcy.BlogApplication                  : Started BlogApplication in 2.345 seconds (JVM running for 3.158)

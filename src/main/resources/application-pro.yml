@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myblog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+
+logging:
+  level:
+    root: warn
+    com.dcy: info
+  file:
+    name: application-pro.yml
+
+server:
+  port: 8080
+
+
